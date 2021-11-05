@@ -5,7 +5,7 @@ interface Collection <T> {
   [name: string]: T
 }
 
-function calculate(num1: any, num2: any, action: keyof Collection<number>) {
+function calculate(num1: any, num2: any, action: keyof Collection<number>): number {
 const actions = {
   add: (a: number, b: number) => a + b,
   subtract: (a: number, b: number) => a - b,
@@ -31,7 +31,7 @@ interface IRhymes<T> {
   [name: string]: T
 }
 
-function getTranslationMap(rhyme: keyof Collection<string>) {
+function getTranslationMap(rhyme: keyof Collection<string>): string {
 const rhymes = {
   "apples and pears": "Stairs",
   "hampstead_heath": "Teeth",

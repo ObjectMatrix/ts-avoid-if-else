@@ -1,16 +1,11 @@
-
-
 /**
  * Don’t Use If-Else and Switch in TS/JavaScript, Use Object Literals
  */
-interface IAction {
-  add: number;
-  subtract: number;
-  multiply: number;
-  divide: number;
+interface Collection <T> {
+  [name: string]: T
 }
 
-function calculate(num1: any, num2: any, action: keyof IAction) {
+function calculate(num1: any, num2: any, action: keyof Collection<number>) {
 const actions = {
   add: (a: number, b: number) => a + b,
   subtract: (a: number, b: number) => a - b,
@@ -32,14 +27,11 @@ return actions[action]?.(num1, num2) ?? "Calculation is not recognised";
 
 console.log(calculate(1, 2, 'add'));
 
-interface IRhymes {
-  "apples and pears": string,
-  hampstead_heath: string,
-  loaf_of_bread: string,
-  pork_pies: string,
-  whistle_and_flute: string,
+interface IRhymes<T> {
+  [name: string]: T
 }
-function getTranslationMap(rhyme: keyof IRhymes) {
+
+function getTranslationMap(rhyme: keyof Collection<string>) {
 const rhymes = {
   "apples and pears": "Stairs",
   "hampstead_heath": "Teeth",

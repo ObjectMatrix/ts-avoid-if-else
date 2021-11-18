@@ -45,5 +45,26 @@ return rhymes[index] ?? "Rhyme not found";
 }
 
 console.log(getTranslationMap('apples and pears'));
+/*
+
+// More Examples:
+export interface Map {
+  [name: string]: () => JSX.Element
+}
+const icons: Map = {
+  'Collision': () => <Collision />,
+  'Comprehensive': () => <Coverages />,
+  'Property Damage': () => <PropertyDamageLiability />,
+  'Uninsured Motorist': () => <Uninsured />,
+  'Medical Payments': () => <MedicalPayments />,
+  'Bodily Injury': () => <BodilyInjury />,
+  'Glass Coverage Indicator': () => <AutoGlassDamage />,
+  '24-Hour Roadside Assistance': () => <RoadsideAssistance />,
+  'Liability': () => <GeneralLiability />,
+  'defaultIcon' : () => <Coverages />,
+}
+export const determineIcon1 = (coverageName : string) => icons[coverageName] ?? icons['defaultIcon'];
+
+*/
 
 //  > ts-node  <filename.ts>

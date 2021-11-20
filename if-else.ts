@@ -47,7 +47,7 @@ return rhymes[index] ?? "Rhyme not found";
 console.log(getTranslationMap('apples and pears'));
 /*
 
-// More Examples:
+// More Examples -  I
 export interface Map {
   [name: string]: () => JSX.Element
 }
@@ -65,6 +65,38 @@ const icons: Map = {
 }
 export const determineIcon1 = (coverageName : string) => icons[coverageName] ?? icons['defaultIcon'];
 
+
+// example - II
+
+const doubler = (input) => {
+  return doubler.operationsByType[typeof input](input);
+};
+doubler.operationsByType = {
+  number: (input) => input + input,
+  string: (input) =>
+    input
+      .split('')
+      .map((letter) => letter + letter)
+      .join(''),
+  function: (input) => {
+    input();
+    input();
+  },
+  object: (input) => {
+    Object.keys(input)
+          .map((key) => (input[key] = doubler(input[key])));
+    return input;
+  },
+};
+console.log(doubler(-10));
+console.log(doubler('hey'));
+console.log(doubler([5, 'hello']));
+console.log(doubler({ a: 5, b: 'hello' }));
+console.log(
+  doubler(function() {
+    console.log('call-me');
+  }),
+);
 */
 
 //  > ts-node  <filename.ts>
